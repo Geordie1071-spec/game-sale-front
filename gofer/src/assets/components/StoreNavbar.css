@@ -1,0 +1,187 @@
+/* Vertical Navbar Container */
+.store-navbar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  padding: 1.5rem 0.5rem;
+  background: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%);
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  width: 80px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: #6477ff #16213e;
+}
+
+/* Custom Scrollbar */
+.store-navbar::-webkit-scrollbar {
+  width: 4px;
+}
+
+.store-navbar::-webkit-scrollbar-thumb {
+  background-color: #6477ff;
+  border-radius: 2px;
+}
+
+/* Store Icon Styles */
+.store-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hover Effect */
+.store-icon:hover {
+  transform: translateX(5px);
+  background: rgba(100, 119, 255, 0.2);
+  box-shadow: 4px 0 15px rgba(101, 119, 255, 0.3);
+  border-color: rgba(101, 119, 255, 0.4);
+}
+
+/* Active State */
+.store-icon.active {
+  background: rgba(100, 119, 255, 0.3);
+  border: 1px solid #6477ff;
+  box-shadow: 4px 0 20px rgba(101, 119, 255, 0.4);
+}
+
+/* Logo Image */
+.store-icon img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+  filter: grayscale(20%) brightness(0.9);
+  transition: all 0.3s ease;
+}
+
+.store-icon:hover img {
+  filter: grayscale(0%) brightness(1.1);
+  transform: scale(1.1);
+}
+
+/* Active State Image */
+.store-icon.active img {
+  filter: grayscale(0%) brightness(1.2);
+}
+
+/* Indicator Dot */
+.store-icon::after {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #6477ff;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.store-icon:hover::after,
+.store-icon.active::after {
+  opacity: 1;
+  left: -5px;
+  width: 8px;
+  height: 8px;
+}
+
+/* Tooltip Text */
+.store-icon::before {
+  content: attr(title);
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 15px;
+  padding: 6px 12px;
+  background: rgba(10, 10, 20, 0.9);
+  color: white;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.store-icon:hover::before {
+  opacity: 1;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .store-navbar {
+    flex-direction: row;
+    width: 100%;
+    height: auto;
+    padding: 0.8rem;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .store-icon {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .store-icon::after {
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .store-icon:hover::after,
+  .store-icon.active::after {
+    top: -8px;
+    left: 50%;
+  }
+  
+  .store-icon::before {
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  
+  .store-icon:hover {
+    transform: translateY(-5px);
+  }
+  .home-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #a3a3a3;
+    transition: color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .home-icon:hover {
+    color: white;
+    transform: scale(1.1);
+  }
+  
+  .home-icon.active {
+    color: #6366f1; 
+  }
+}
