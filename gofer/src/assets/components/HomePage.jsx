@@ -11,7 +11,7 @@ const Homepage = ({ topDeals }) => {
       
       <header className="homepage-header">
         <div className="logo-container">
-          <img src='./src/assets/logo.png' alt="Game Deals Logo" className="homepage-logo" />
+          <img src='/logo.png' alt="Game Deals Logo" className="homepage-logo" />
           <div className="logo-glow"></div>
         </div>
         <h1 className="homepage-title">

@@ -69,10 +69,10 @@ const DealsGrid = ({ deals }) => {
 
   return (
     <div className="deals-page">
-      <ParticleBackground /> {/* Add the particle background here */}
+      <ParticleBackground /> 
       <div className="container">
         <header className="header">
-          <img src='./src/assets/logo.png' alt="Game Deals Logo" className="header-logo" />
+          <img src='/logo.png' alt="Game Deals Logo" className="header-logo" />
           <p className="header-subtitle">Discover the best discounts on your favorite games</p>
         </header>
 

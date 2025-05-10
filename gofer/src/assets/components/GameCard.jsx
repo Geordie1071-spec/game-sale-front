@@ -33,7 +33,7 @@ const GameCard = ({ game }) => {
           alt={title}
           className="game-image"
           onError={(e) => {
-            e.target.src = './src/assets/image.png';
+            e.target.src = '/image.png';
           }}
         />
         <div className="discount-badge">
