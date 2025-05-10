@@ -46,7 +46,7 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     const url = selectedStoreName && selectedStoreName !== "ALL"
-      ? `https://web-production-450ff.up.railway.app/?store_name=${encodeURIComponent(selectedStoreName)}`
+      ? `https://web-production-450ff.up.railway.app/deals/?store_name=${encodeURIComponent(selectedStoreName)}`
       : "https://web-production-450ff.up.railway.app/deals/";
 
     fetch(url)
