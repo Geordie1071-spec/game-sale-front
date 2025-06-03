@@ -13,7 +13,7 @@ const App = () => {
 
  
   useEffect(() => {
-    fetch("https://web-production-450ff.up.railway.app/stores")
+    fetch("http://localhost:8000/stores")
       .then((res) => res.json())
       .then((data) => {
         setStores(data.stores);
@@ -28,7 +28,7 @@ const App = () => {
   
   useEffect(() => {
     setIsLoading(true);
-    fetch("https://web-production-450ff.up.railway.app/deals/top") 
+    fetch("http://localhost:8000/deals/top") 
       .then((res) => res.json())
       .then((data) => {
         console.log("Top Deals:", data.deals);
@@ -46,8 +46,8 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true);
     const url = selectedStoreName && selectedStoreName !== "ALL"
-      ? `https://web-production-450ff.up.railway.app/deals/?store_name=${encodeURIComponent(selectedStoreName)}`
-      : "https://web-production-450ff.up.railway.app/deals/";
+      ? `http://localhost:8000/deals/?store_name=${encodeURIComponent(selectedStoreName)}`
+      : "http://localhost:8000/deals/";
 
     fetch(url)
       .then((res) => res.json())
